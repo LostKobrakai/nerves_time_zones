@@ -88,9 +88,9 @@ defmodule NervesTimeZones.MixProject do
   end
 
   defp make_env() do
-    tzdata_version = Application.get_env(@app, :version, @tzdata_version)
-    tzdata_earliest_date = Application.get_env(@app, :earliest_date, @tzdata_earliest_date)
-    tzdata_latest_date = Application.get_env(@app, :latest_date, @tzdata_latest_date)
+    tzdata_version = Application.compile_env(@app, :version, @tzdata_version)
+    tzdata_earliest_date = Application.compile_env(@app, :earliest_date, @tzdata_earliest_date)
+    tzdata_latest_date = Application.compile_env(@app, :latest_date, @tzdata_latest_date)
 
     if tzdata_version != @tzdata_version do
       msg = """
